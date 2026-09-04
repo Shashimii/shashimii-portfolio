@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+    --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
+    --color-canvas: #020617;
+    --color-sky: #38bdf8;
+    --animate-rise: rise 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(0.75rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.page-grid {
+    background-color: var(--color-canvas);
+}
+
+.page-rail {
+    background-color: var(--color-canvas);
+    background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 8px,
+        rgb(255 255 255 / 0.08) 8px,
+        rgb(255 255 255 / 0.08) 9px
+    );
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
