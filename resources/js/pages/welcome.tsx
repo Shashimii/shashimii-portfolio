@@ -1,7 +1,8 @@
 import { Head, Link } from '@inertiajs/react';
+import type { ReactNode } from 'react';
+import HangingBadge from '@/components/hanging-badge';
 import { home } from '@/routes';
 import { cn } from '@/lib/utils';
-import type { ReactNode } from 'react';
 
 const projects = [
     {
@@ -41,7 +42,7 @@ function FullBleedLine({ edge }: { edge: 'top' | 'bottom' }) {
         <div
             aria-hidden
             className={cn(
-                'pointer-events-none absolute right-[calc(50%-50vw)] left-[calc(50%-50vw)] h-px bg-white/10',
+                'pointer-events-none absolute left-1/2 h-px w-screen -translate-x-1/2 bg-white/10',
                 edge === 'top' ? 'top-0' : 'bottom-0',
             )}
         />
@@ -196,71 +197,82 @@ export default function Welcome() {
                         </nav>
                     </header>
 
-                    <section className="flex flex-col pt-16 sm:pt-20 lg:pt-24">
-                        <div className="flex flex-col motion-safe:animate-rise motion-reduce:animate-none">
-                            <MetaBand
-                                tokens={[
-                                    'text-8xl',
-                                    'text-white',
-                                    'tracking-tighter',
-                                    'text-balance',
-                                ]}
-                            />
-                            <Band>
-                                <h1 className="text-5xl font-extrabold tracking-tighter text-balance sm:text-7xl lg:text-8xl">
-                                    Shashimii
-                                </h1>
-                            </Band>
+                    <section className="relative pt-16 sm:pt-20 lg:pt-24">
+                        <div className="pointer-events-none absolute top-10 right-0 bottom-0 z-20 hidden w-[min(34rem,42%)] items-start justify-center pt-6 lg:flex">
+                            <div className="pointer-events-auto motion-safe:animate-rise motion-reduce:animate-none [animation-delay:360ms]">
+                                <HangingBadge />
+                            </div>
                         </div>
 
-                        <div className="flex flex-col motion-safe:animate-rise motion-reduce:animate-none [animation-delay:120ms]">
-                            <MetaBand
-                                tokens={[
-                                    'text-lg',
-                                    'text-white',
-                                    'font-medium',
-                                ]}
-                            />
-                            <Band>
-                                <p className="max-w-2xl text-lg font-medium text-pretty text-white/80">
-                                    Full-stack developer. I build products with{' '}
-                                    <span className="text-sky">Laravel</span>,{' '}
-                                    <span className="text-sky">React</span>, and{' '}
-                                    <span className="text-sky">Inertia</span> —
-                                    composed in the markup, shipped on the
-                                    server.
-                                </p>
-                            </Band>
-                        </div>
+                        <div className="relative z-10 flex flex-col">
+                            <div className="flex flex-col motion-safe:animate-rise motion-reduce:animate-none">
+                                <MetaBand
+                                    tokens={[
+                                        'text-8xl',
+                                        'text-white',
+                                        'tracking-tighter',
+                                        'text-balance',
+                                    ]}
+                                />
+                                <Band>
+                                    <h1 className="max-w-3xl text-5xl font-extrabold tracking-tighter text-balance sm:text-7xl lg:max-w-[min(40rem,55%)] lg:text-8xl">
+                                        Shashimii
+                                    </h1>
+                                </Band>
+                            </div>
 
-                        <div className="mt-10 flex flex-col motion-safe:animate-rise motion-reduce:animate-none [animation-delay:240ms]">
-                            <MetaBand
-                                tokens={[
-                                    'rounded-full',
-                                    'bg-sky',
-                                    'px-5',
-                                    'py-2.5',
-                                    'text-sm',
-                                    'font-semibold',
-                                ]}
-                            />
-                            <Band className="flex flex-col justify-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                                <a
-                                    href="#projects"
-                                    className="inline-flex items-center justify-center rounded-full bg-sky px-5 py-2.5 text-sm font-semibold text-canvas hover:bg-sky/90"
-                                >
-                                    View work
-                                </a>
-                                <a
-                                    href="#contact"
-                                    className="inline-flex items-center justify-between gap-8 rounded-full bg-white/5 px-5 py-2.5 text-sm text-white/55 ring-1 ring-white/10 hover:text-white"
-                                >
-                                    Get in touch
-                                    <span className="font-mono text-[11px] text-white/30">
-                                        04
-                                    </span>
-                                </a>
-                            </Band>
+                            <div className="flex flex-col motion-safe:animate-rise motion-reduce:animate-none [animation-delay:120ms]">
+                                <MetaBand
+                                    tokens={[
+                                        'text-lg',
+                                        'text-white',
+                                        'font-medium',
+                                    ]}
+                                />
+                                <Band>
+                                    <p className="max-w-2xl text-lg font-medium text-pretty text-white/80 lg:max-w-[min(36rem,52%)]">
+                                        Full-stack developer. I build products
+                                        with{' '}
+                                        <span className="text-sky">Laravel</span>
+                                        ,{' '}
+                                        <span className="text-sky">React</span>,
+                                        and{' '}
+                                        <span className="text-sky">Inertia</span>{' '}
+                                        — composed in the markup, shipped on the
+                                        server.
+                                    </p>
+                                </Band>
+                            </div>
+
+                            <div className="mt-10 flex flex-col motion-safe:animate-rise motion-reduce:animate-none [animation-delay:240ms]">
+                                <MetaBand
+                                    tokens={[
+                                        'rounded-full',
+                                        'bg-sky',
+                                        'px-5',
+                                        'py-2.5',
+                                        'text-sm',
+                                        'font-semibold',
+                                    ]}
+                                />
+                                <Band className="flex flex-col justify-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                                    <a
+                                        href="#projects"
+                                        className="inline-flex items-center justify-center rounded-full bg-sky px-5 py-2.5 text-sm font-semibold text-canvas hover:bg-sky/90"
+                                    >
+                                        View work
+                                    </a>
+                                    <a
+                                        href="#contact"
+                                        className="inline-flex items-center justify-between gap-8 rounded-full bg-white/5 px-5 py-2.5 text-sm text-white/55 ring-1 ring-white/10 hover:text-white"
+                                    >
+                                        Get in touch
+                                        <span className="font-mono text-[11px] text-white/30">
+                                            04
+                                        </span>
+                                    </a>
+                                </Band>
+                            </div>
                         </div>
                     </section>
 
