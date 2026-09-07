@@ -59,27 +59,10 @@ export default function HangingBadge() {
                             Besa
                         </div>
 
-                        <div className="mt-3 font-mono text-xs tracking-[0.08em] text-white/40">
-                            ID SDEV-2026
-                        </div>
-
-                        <div className="mt-auto flex w-full justify-between gap-4">
-                            <div>
-                                <div className="font-mono text-[10px] tracking-[0.08em] text-white/30 uppercase">
-                                    Department
-                                </div>
-                                <div className="text-sm font-bold text-white/75 uppercase">
-                                    Fullstack
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <div className="font-mono text-[10px] tracking-[0.08em] text-white/30 uppercase">
-                                    Position
-                                </div>
-                                <div className="text-sm font-bold text-white/75 uppercase">
-                                    Developer
-                                </div>
-                            </div>
+                        <div className="mt-3 text-center font-mono text-xs leading-relaxed tracking-[0.08em] text-white/40">
+                            ICT Specialist
+                            <br />
+                            Fullstack Developer
                         </div>
                     </div>
 

@@ -170,17 +170,30 @@ export default function Welcome() {
                         )}
                     >
                         <FullBleedLine edge="bottom" />
-                        <Link
-                            href={home.url()}
-                            className="flex items-center gap-3 motion-safe:animate-rise motion-reduce:animate-none"
-                        >
-                            <span className="text-sm font-semibold tracking-tight">
+                        <div className="flex items-center gap-3 motion-safe:animate-rise motion-reduce:animate-none">
+                            <a
+                                href="https://github.com/Shashimii"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub profile"
+                                className="inline-flex size-7 items-center justify-center rounded-full bg-white/5 text-white/55 ring-1 ring-white/10 hover:bg-white/10 hover:text-white"
+                            >
+                                <svg
+                                    aria-hidden
+                                    viewBox="0 0 16 16"
+                                    className="size-3.5"
+                                    fill="currentColor"
+                                >
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                                </svg>
+                            </a>
+                            <Link
+                                href={home.url()}
+                                className="text-sm font-semibold tracking-tight"
+                            >
                                 Shashimii
-                            </span>
-                            <span className="rounded-full bg-white/5 px-2 py-0.5 font-mono text-[11px] text-white/50 ring-1 ring-white/10">
-                                dev
-                            </span>
-                        </Link>
+                            </Link>
+                        </div>
                         <nav
                             aria-label="Primary"
                             className="flex flex-wrap justify-end gap-x-5 gap-y-2 text-sm text-white/60"
@@ -231,15 +244,14 @@ export default function Welcome() {
                                 />
                                 <Band>
                                     <p className="max-w-2xl text-lg font-medium text-pretty text-white/80 lg:max-w-[min(36rem,52%)]">
-                                        Full-stack developer. I build products
-                                        with{' '}
+                                        Full-stack developer creating web apps
+                                        and websites for business with{' '}
                                         <span className="text-sky">Laravel</span>
                                         ,{' '}
                                         <span className="text-sky">React</span>,
                                         and{' '}
-                                        <span className="text-sky">Inertia</span>{' '}
-                                        — composed in the markup, shipped on the
-                                        server.
+                                        <span className="text-sky">Inertia</span>
+                                        .
                                     </p>
                                 </Band>
                             </div>
@@ -258,9 +270,22 @@ export default function Welcome() {
                                 <Band className="flex flex-col justify-center gap-3 sm:flex-row sm:items-center sm:justify-start">
                                     <a
                                         href="#projects"
-                                        className="inline-flex items-center justify-center rounded-full bg-sky px-5 py-2.5 text-sm font-semibold text-canvas hover:bg-sky/90"
+                                        className="inline-flex items-center justify-center gap-2 rounded-full bg-sky px-5 py-2.5 text-sm font-semibold text-canvas hover:bg-sky/90"
                                     >
-                                        View work
+                                        Let's create
+                                        <svg
+                                            aria-hidden
+                                            viewBox="0 0 16 16"
+                                            className="size-3.5"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M4 12L12 4" />
+                                            <path d="M6 4h6v6" />
+                                        </svg>
                                     </a>
                                     <a
                                         href="#contact"
@@ -426,7 +451,7 @@ export default function Welcome() {
                         />
                         <Band>
                             <h2 className="text-3xl font-extrabold tracking-tighter">
-                                Get in touch
+                                Contact me
                             </h2>
                         </Band>
                         <MetaBand
@@ -434,9 +459,8 @@ export default function Welcome() {
                         />
                         <Band>
                             <p className="max-w-xl text-white/65">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore.
+                                Have a project in mind? Send me an email and
+                                let’s talk.
                             </p>
                         </Band>
                         <MetaBand
@@ -450,11 +474,9 @@ export default function Welcome() {
                         <Band>
                             <a
                                 className="w-fit font-mono text-xl text-sky hover:text-white sm:text-2xl"
-                                href="https://github.com/Shashimii"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="mailto:besasamreginald36@gmail.com"
                             >
-                                github.com/Shashimii
+                                besasamreginald36@gmail.com
                             </a>
                         </Band>
                     </section>
