@@ -31,6 +31,10 @@ export default defineConfig({
             formVariants: true,
         }),
     ]),
+    optimizeDeps: {
+        include: ['simple-icons'],
+        exclude: ['lucide-react'],
+    },
     server: {
         watch: {
             ignored: [

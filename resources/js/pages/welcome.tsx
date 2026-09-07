@@ -1,6 +1,7 @@
 import { Head, Link } from '@inertiajs/react';
 import type { ReactNode } from 'react';
 import HangingBadge from '@/components/hanging-badge';
+import TechStack from '@/components/tech-stack';
 import { home } from '@/routes';
 import { cn } from '@/lib/utils';
 
@@ -200,6 +201,9 @@ export default function Welcome() {
                         >
                             <a className="hover:text-white" href="#projects">
                                 Projects
+                            </a>
+                            <a className="hover:text-white" href="#stack">
+                                Stack
                             </a>
                             <a className="hover:text-white" href="#about">
                                 About
@@ -406,6 +410,25 @@ export default function Welcome() {
                                 </SplitCell>
                             ))}
                         </SplitRow>
+                    </section>
+
+                    <section id="stack" className="flex flex-col">
+                        <MetaBand
+                            tokens={[
+                                'text-3xl',
+                                'font-extrabold',
+                                'tracking-tighter',
+                            ]}
+                        />
+                        <Band>
+                            <h2 className="text-3xl font-extrabold tracking-tighter">
+                                Tech stack
+                            </h2>
+                        </Band>
+                        <div className="relative">
+                            <FullBleedLine edge="top" />
+                            <TechStack />
+                        </div>
                     </section>
 
                     <section id="about" className="flex flex-col">
