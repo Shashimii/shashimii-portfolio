@@ -438,9 +438,11 @@ export default function Welcome() {
                         <Band>
                             <a
                                 className="w-fit font-mono text-xl text-sky hover:text-white sm:text-2xl"
-                                href="mailto:hello@shashimii.dev"
+                                href="https://github.com/Shashimii"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
-                                hello@shashimii.dev
+                                github.com/Shashimii
                             </a>
                         </Band>
                     </section>
