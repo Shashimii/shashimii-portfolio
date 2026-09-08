@@ -349,7 +349,7 @@ export default function Welcome() {
                             <FullBleedLine edge="bottom" />
                             <ThemeSwitcher />
                             <span className="font-mono text-[11px] text-slate-400 dark:text-white/35">
-                                © {new Date().getFullYear()} Shashimii
+                                2026 Shashimii - Inspired by TailwindCSS 4
                             </span>
                         </footer>
                     </div>
