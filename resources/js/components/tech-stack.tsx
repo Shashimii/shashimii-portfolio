@@ -43,7 +43,7 @@ function BrandIcon({ icon, title }: { icon: SimpleIcon; title: string }) {
             role="img"
             viewBox="0 0 24 24"
             aria-label={title}
-            className="size-8 fill-white sm:size-9"
+            className="size-8 fill-slate-900 sm:size-9 dark:fill-white"
         >
             <title>{title}</title>
             <path d={icon.path} />
@@ -53,14 +53,14 @@ function BrandIcon({ icon, title }: { icon: SimpleIcon; title: string }) {
 
 export default function TechStack() {
     return (
-        <div className="grid grid-cols-2 gap-px bg-white/10 sm:grid-cols-3 lg:mx-10 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-px bg-slate-900/10 sm:grid-cols-3 lg:mx-10 lg:grid-cols-4 dark:bg-white/10">
             {stack.map(({ name, icon }) => (
                 <div
                     key={name}
-                    className="flex h-28 flex-col items-center justify-center gap-3 bg-canvas px-4 sm:h-32"
+                    className="flex h-28 flex-col items-center justify-center gap-3 bg-slate-50 px-4 sm:h-32 dark:bg-canvas"
                 >
                     <BrandIcon icon={icon} title={name} />
-                    <span className="text-center text-[13px] font-semibold tracking-tight text-white/90 sm:text-sm">
+                    <span className="text-center text-[13px] font-semibold tracking-tight text-slate-800 sm:text-sm dark:text-white/90">
                         {name}
                     </span>
                 </div>

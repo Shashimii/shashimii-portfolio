@@ -3,6 +3,8 @@
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
     --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
@@ -41,10 +43,25 @@ html {
 }
 
 .page-grid {
+    background-color: #f8fafc;
+}
+
+.dark .page-grid {
     background-color: var(--color-canvas);
 }
 
 .page-rail {
+    background-color: #f8fafc;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 8px,
+        rgb(15 23 42 / 0.08) 8px,
+        rgb(15 23 42 / 0.08) 9px
+    );
+}
+
+.dark .page-rail {
     background-color: var(--color-canvas);
     background-image: repeating-linear-gradient(
         -45deg,

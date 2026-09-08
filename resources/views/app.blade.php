@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" @class(['dark' => ($appearance ?? 'system') == 'dark'])>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script>
+            (function () {
+                try {
+                    var appearance = localStorage.getItem('appearance') || 'system';
+                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    var isDark = appearance === 'dark' || (appearance === 'system' && prefersDark);
+                    document.documentElement.classList.toggle('dark', isDark);
+                    document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+                } catch (_) {}
+            })();
+        </script>
 
         <link rel="icon" href="/favicon.ico" sizes="any">
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -16,7 +28,7 @@
             <title>{{ config('app.name', 'Laravel') }}</title>
         </x-inertia::head>
     </head>
-    <body class="bg-canvas font-sans text-white antialiased">
+    <body class="bg-slate-50 font-sans text-slate-900 antialiased dark:bg-canvas dark:text-white">
         <x-inertia::app />
     </body>
 </html>
