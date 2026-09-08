@@ -59,7 +59,7 @@ export default function Welcome() {
         <>
             <Head title="Shashimii" />
 
-            <div className="page-grid relative min-h-dvh overflow-x-hidden">
+            <div className="page-grid relative min-h-dvh">
                 <div className="relative mx-auto min-h-dvh w-full max-w-6xl lg:max-w-[calc(72rem+5rem)]">
                     <div
                         className="page-rail pointer-events-none absolute inset-y-0 left-0 z-0 hidden w-10 border-x border-slate-900/10 lg:block dark:border-white/10"
@@ -70,10 +70,18 @@ export default function Welcome() {
                         aria-hidden
                     />
 
-                    <div className="relative z-10">
+                    <div className="pointer-events-none absolute top-0 right-0 z-20 hidden w-[min(30rem,40%)] justify-center lg:flex">
+                        <div className="pointer-events-auto motion-safe:animate-rise motion-reduce:animate-none [animation-delay:360ms]">
+                            <div className="origin-top scale-[0.9]">
+                                <HangingBadge />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="relative z-10 overflow-x-clip">
                         <header
                             className={cn(
-                                'relative flex items-center justify-between gap-6 py-4',
+                                'relative z-30 flex items-center justify-between gap-6 py-4',
                                 shellX,
                             )}
                         >
@@ -122,12 +130,6 @@ export default function Welcome() {
                         </header>
 
                         <section className="relative pt-16 sm:pt-20 lg:pt-24">
-                            <div className="pointer-events-none absolute top-16 right-0 bottom-0 z-20 hidden w-[min(34rem,42%)] items-start justify-center pt-12 lg:flex">
-                                <div className="pointer-events-auto motion-safe:animate-rise motion-reduce:animate-none [animation-delay:360ms]">
-                                    <HangingBadge />
-                                </div>
-                            </div>
-
                             <div className="relative z-10 flex flex-col">
                                 <div className="flex flex-col motion-safe:animate-rise motion-reduce:animate-none">
                                     <MetaBand
