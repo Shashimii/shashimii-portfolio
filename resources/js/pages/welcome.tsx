@@ -122,7 +122,7 @@ export default function Welcome() {
                         </header>
 
                         <section className="relative pt-16 sm:pt-20 lg:pt-24">
-                            <div className="pointer-events-none absolute top-10 right-0 bottom-0 z-20 hidden w-[min(34rem,42%)] items-start justify-center pt-6 lg:flex">
+                            <div className="pointer-events-none absolute top-16 right-0 bottom-0 z-20 hidden w-[min(34rem,42%)] items-start justify-center pt-12 lg:flex">
                                 <div className="pointer-events-auto motion-safe:animate-rise motion-reduce:animate-none [animation-delay:360ms]">
                                     <HangingBadge />
                                 </div>
