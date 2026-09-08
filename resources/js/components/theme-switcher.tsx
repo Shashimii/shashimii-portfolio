@@ -17,7 +17,7 @@ const options: {
             <svg
                 aria-hidden
                 viewBox="0 0 24 24"
-                className="size-4"
+                className="size-3.5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.75"
@@ -37,7 +37,7 @@ const options: {
             <svg
                 aria-hidden
                 viewBox="0 0 24 24"
-                className="size-4"
+                className="size-3.5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.75"
@@ -63,7 +63,7 @@ const options: {
             <svg
                 aria-hidden
                 viewBox="0 0 24 24"
-                className="size-4"
+                className="size-3.5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.75"
@@ -80,16 +80,26 @@ const options: {
 
 export default function ThemeSwitcher({ className }: { className?: string }) {
     const { appearance, updateAppearance } = useAppearance();
+    const activeIndex = Math.max(
+        0,
+        options.findIndex((option) => option.value === appearance),
+    );
 
     return (
         <div
             role="group"
             aria-label="Theme"
             className={cn(
-                'inline-flex items-center gap-0.5 rounded-full bg-slate-200/80 p-1 ring-1 ring-slate-900/10 dark:bg-slate-800 dark:ring-white/10',
+                'relative inline-flex items-center rounded-full bg-slate-200/80 p-0.5 ring-1 ring-slate-900/10 dark:bg-slate-800 dark:ring-white/10',
                 className,
             )}
         >
+            <span
+                aria-hidden
+                className="absolute top-0.5 left-0.5 size-6 rounded-full bg-white shadow-sm transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] dark:bg-white/15 dark:shadow-none motion-reduce:transition-none"
+                style={{ transform: `translateX(${activeIndex * 100}%)` }}
+            />
+
             {options.map((option) => {
                 const active = appearance === option.value;
 
@@ -101,9 +111,9 @@ export default function ThemeSwitcher({ className }: { className?: string }) {
                         aria-pressed={active}
                         onClick={() => updateAppearance(option.value)}
                         className={cn(
-                            'inline-flex size-8 items-center justify-center rounded-full text-slate-500 transition-colors dark:text-white/50',
+                            'relative z-10 inline-flex size-6 items-center justify-center rounded-full text-slate-500 transition-colors duration-200 dark:text-white/50',
                             active
-                                ? 'bg-white text-slate-900 shadow-sm dark:bg-white/15 dark:text-white dark:shadow-none'
+                                ? 'text-slate-900 dark:text-white'
                                 : 'hover:text-slate-800 dark:hover:text-white/80',
                         )}
                     >
