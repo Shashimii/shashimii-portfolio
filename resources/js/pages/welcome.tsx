@@ -106,6 +106,9 @@ export default function Welcome() {
                                 aria-label="Primary"
                                 className="flex flex-wrap justify-end gap-x-5 gap-y-2 text-sm text-slate-500 dark:text-white/60"
                             >
+                                <a className="hover:text-slate-900 dark:hover:text-white" href="#play">
+                                    Play
+                                </a>
                                 <a className="hover:text-slate-900 dark:hover:text-white" href="#stack">
                                     Stack
                                 </a>
@@ -207,10 +210,42 @@ export default function Welcome() {
                                         >
                                             Get in touch
                                             <span className="font-mono text-[11px] text-slate-400 dark:text-white/30">
-                                                03
+                                                04
                                             </span>
                                         </a>
                                     </Band>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="play" className="flex flex-col">
+                            <MetaBand
+                                tokens={[
+                                    'text-3xl',
+                                    'font-extrabold',
+                                    'tracking-tighter',
+                                ]}
+                            />
+                            <Band>
+                                <h2 className="text-3xl font-extrabold tracking-tighter">
+                                    Play
+                                </h2>
+                            </Band>
+                            <MetaBand
+                                tokens={['max-w-xl', 'text-white/65']}
+                            />
+                            <Band>
+                                <p className="max-w-xl text-slate-600 dark:text-white/65">
+                                    Small experiments and interactive pieces I
+                                    build for fun.
+                                </p>
+                            </Band>
+                            <div className={cn('relative py-5 sm:py-8', shellX)}>
+                                <FullBleedLine edge="top" />
+                                <div className="flex min-h-56 items-center justify-center border border-slate-900/10 bg-slate-50 dark:border-white/10 dark:bg-canvas md:min-h-72">
+                                    <span className="font-mono text-[11px] text-slate-400 dark:text-white/30">
+                                        playground / coming soon
+                                    </span>
                                 </div>
                             </div>
                         </section>
