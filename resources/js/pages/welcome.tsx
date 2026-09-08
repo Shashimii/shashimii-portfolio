@@ -257,12 +257,11 @@ export default function Welcome() {
                             />
                             <Band>
                                 <p className="max-w-2xl text-lg font-medium text-slate-600 dark:text-white/75">
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip
-                                    ex ea commodo consequat.
+                                    With 3 years in fullstack development, I
+                                    focus on building web applications and online
+                                    businesses, especially with Laravel, turning
+                                    ideas into clean, dependable software for the
+                                    web.
                                 </p>
                             </Band>
                         </section>
