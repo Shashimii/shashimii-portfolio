@@ -57,9 +57,9 @@ export default function HangingBadge() {
             const opacity = String(glareOpacity.current);
             const spotlight = `radial-gradient(circle at ${x}% ${y}%, #000 0%, rgba(0,0,0,0.85) 12%, transparent 34%)`;
             const glareBackground = [
-                `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.22) 14%, transparent 36%)`,
-                `repeating-linear-gradient(0deg, rgba(255,255,255,0.42) 0 1px, transparent 1px 14px)`,
-                `repeating-linear-gradient(90deg, rgba(255,255,255,0.42) 0 1px, transparent 1px 14px)`,
+                `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.38) 14%, transparent 36%)`,
+                `repeating-linear-gradient(0deg, rgba(255,255,255,0.7) 0 1px, transparent 1px 36px)`,
+                `repeating-linear-gradient(90deg, rgba(255,255,255,0.7) 0 1px, transparent 1px 36px)`,
             ].join(', ');
 
             for (const layer of glares.current) {
@@ -206,7 +206,7 @@ export default function HangingBadge() {
                         <div
                             ref={setGlareRef(0)}
                             aria-hidden
-                            className="pointer-events-none absolute inset-0 z-10 mix-blend-overlay"
+                            className="pointer-events-none absolute inset-0 z-10 mix-blend-soft-light"
                             style={{ opacity: 0 }}
                         />
 
@@ -300,13 +300,18 @@ export default function HangingBadge() {
                         <div
                             ref={setGlareRef(1)}
                             aria-hidden
-                            className="pointer-events-none absolute inset-0 z-10 mix-blend-overlay"
+                            className="pointer-events-none absolute inset-0 z-10 mix-blend-soft-light"
                             style={{ opacity: 0 }}
                         />
 
                         <div className="pointer-events-none relative flex h-full flex-col items-center gap-3 px-8 pt-16 text-center">
-                            <div className="flex size-20 items-center justify-center rounded-full bg-linear-to-br from-slate-800 to-slate-600 text-3xl font-bold text-white/70 ring-2 ring-white/15">
-                                S
+                            <div className="size-20 overflow-hidden rounded-full ring-2 ring-white/15">
+                                <img
+                                    src="/images/avatar.png"
+                                    alt="Sam Reginald Besa"
+                                    className="size-full object-cover"
+                                    draggable={false}
+                                />
                             </div>
 
                             <div className="mt-2 text-2xl font-extrabold tracking-tight text-white uppercase">
